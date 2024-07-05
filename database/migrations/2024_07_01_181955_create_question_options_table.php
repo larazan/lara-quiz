@@ -15,10 +15,11 @@ return new class extends Migration
             $table->uuid('id');
             $table->unsignedBigInteger('question_id')->default(0);
             $table->string('option')->default(null);
-            $table->tinyInteger('is_answer', 0);
+            $table->tinyInteger('is_answer')->default(0);
+            $table->string('image')->default(null);
             $table->timestamps();
 
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            // $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
     }
 

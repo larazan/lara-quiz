@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('message');
-            $table->tinyInteger('status',1)->default(0);
+            $table->tinyInteger('status')->default(0);
             $table->tinyInteger('opened')->default(0);
             $table->string('feedback')->default(0);
             $table->longText('reply')->nullable();

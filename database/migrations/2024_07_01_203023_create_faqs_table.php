@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->text('question');
             $table->text('answer');
-            $table->tinyInteger('status',1)->default(1);
-            $table->integer('order_position')->default(null);
+            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('order_position')->default(null);
             $table->timestamps();
         });
     }

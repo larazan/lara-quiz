@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('question_quiz_info', function (Blueprint $table) {
             // $table->id();
-            $table->unsignedBigInteger('question_id')->default(0);
-            $table->unsignedBigInteger('quiz_info_id')->default(0);
+            $table->unsignedBigInteger('question_id');
+            $table->unsignedBigInteger('quiz_info_id');
             $table->timestamps();
 
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
-            $table->foreign('quiz_info_id')->references('id')->on('quiz_infos')->onDelete('cascade');
+            // $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            // $table->foreign('quiz_info_id')->references('id')->on('quiz_infos')->onDelete('cascade');
         });
     }
 

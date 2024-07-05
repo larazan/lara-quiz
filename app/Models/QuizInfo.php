@@ -24,6 +24,9 @@ class QuizInfo extends Model
         'status',
     ];
 
+    public const UPLOAD_DIR = 'uploads/quizzes';
+    public const ORIGINAL = '135x75';
+
     public static function boot() {
         parent::boot();
         // Auto generate UUID when creating data User

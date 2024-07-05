@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('slug');
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->string('image', 40)->default(null);
-            $table->tinyInteger('status', 1)->default(1);
-            $table->integer('order_position')->default(null);
+            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('order_position')->default(null);
             $table->timestamps();
 
             $table->foreign('parent_id')->references('id')->on('categories');

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('image', 40)->default(null);
             $table->string('act', 40);
             $table->string('short_description')->default(null);
-            $table->tinyInteger('is_categorise', 1);
-            $table->tinyInteger('status', 1)->default(1);
+            $table->tinyInteger('is_categorise');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

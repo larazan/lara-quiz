@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('question')->default(null);
-            $table->string('image', 40)->default(null);
+            $table->string('image')->default(null);
             $table->string('code', 40)->default(null);
-            $table->tinyInteger('point', 3)->default(0);
-            $table->tinyInteger('status', 1)->default(1);
+            $table->string('answer')->default(null); // for true false 1/0, for fill in blank
+            $table->tinyInteger('point')->default(0);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

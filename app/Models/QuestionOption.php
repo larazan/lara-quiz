@@ -13,7 +13,11 @@ class QuestionOption extends Model
         'question_id',
         'option',
         'is_answer',
+        'image',
     ];
+
+    public const UPLOAD_DIR = 'uploads/options';
+    public const ORIGINAL = '135x75';
 
     public function question()
     {

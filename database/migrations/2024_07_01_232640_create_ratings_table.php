@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('quiz_info_id')->default(0);
+            $table->unsignedBigInteger('quiz_info_id');
             $table->string('ip_address');
             $table->integer('star_rating');
             $table->timestamps();
 
-            $table->foreign('quiz_info_id')->references('id')->on('quiz_infos')->onDelete('cascade');
+            // $table->foreign('quiz_info_id')->references('id')->on('quiz_infos')->onDelete('cascade');
         });
     }
 

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('rule')->default(null);
             $table->text('description')->default(null);
             $table->integer('duration')->default(null);
-            $table->tinyInteger('status', 1)->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
 
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');

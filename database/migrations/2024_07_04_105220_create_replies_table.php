@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('general_settings', function (Blueprint $table) {
+        Schema::create('replies', function (Blueprint $table) {
             $table->id();
-            $table->string('site_name')->default(null);
-            $table->tinyInteger('maintenance_mode')->default(0);
+            $table->text('body');
+            $table->integer('replyable_id');
+            $table->string('replyable_type')->default('');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('general_settings');
+        Schema::dropIfExists('replies');
     }
 };
