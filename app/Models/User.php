@@ -13,6 +13,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -32,12 +33,14 @@ class User extends Authenticatable
 
     protected $table = self::TABLE;
 
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'uuid',
         'name',
         'email',
         'password',
@@ -109,10 +112,10 @@ class User extends Authenticatable
         ];
     }
 
-    public function id(): int
-    {
-        return $this->id;
-    }
+    // public function id(): int
+    // {
+    //     return $this->id;
+    // }
 
     public function name(): string
     {

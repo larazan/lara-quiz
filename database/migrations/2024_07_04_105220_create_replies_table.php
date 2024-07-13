@@ -16,7 +16,8 @@ return new class extends Migration
             $table->text('body');
             $table->integer('replyable_id');
             $table->string('replyable_type')->default('');
-            $table->unsignedBigInteger('user_id');
+            // $table->unsignedBigInteger('user_id');
+            $table->foreignUuid('user_id')->constrained(); 
             $table->timestamps();
         });
     }
